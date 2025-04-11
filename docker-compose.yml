@@ -3,10 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: blank_next_app:v1.2
+    container_name: blank_next_app
+    
     ports:
       - "3000:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production

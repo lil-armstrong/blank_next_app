@@ -1,14 +1,15 @@
 {
   "name": "blank_next_app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
-    "up": "docker compose up -d",
+    "up": "COMPOSE_BAKE=true docker compose up -d --build",
     "down": "docker compose down"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@babel/runtime": "^7.26.10",
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "15.3.0",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.3.0",
     "@types/node": "^20",
